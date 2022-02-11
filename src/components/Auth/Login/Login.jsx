@@ -24,22 +24,23 @@ const Login = (props) => {
         .then((data) => props.updateLocalStorage(data.token))
         .catch((err)=> console.error(err));
     }
+
     return ( 
-      <div>
-          <h1>Login</h1>
-          <Form onSubmit={handleSubmit}>
-              <FormGroup>
-                  <Label htmlFor='Email'>Email</Label>
-                  <Input onChange={(e) => setemail(e.target.value)} name='email' value={email}/> 
-              </FormGroup>
-              <FormGroup>
-                  <Label htmlFor='password'>Password</Label>
-                  <Input onChange={(e) => setpassword(e.target.value)} name='password' value={password}/>
-              </FormGroup>
-              <Button type='submit'>Login</Button>
-          </Form>
-      </div>
-   )
+        <div>
+            <h1>Login</h1>
+            <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label htmlFor='Email'>Email</Label>
+                    <Input onChange={(e) => setemail(e.target.value)} name='email' value={email}/> 
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor='password'>Password</Label>
+                    <Input onChange={(e) => setpassword(e.target.value)} name='password' value={password}/>
+                </FormGroup>
+                <Button type='submit'>Login</Button>
+            </Form>
+        </div>
+     )
 }
 
 export default Login;

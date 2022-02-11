@@ -1,57 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import Auth from './components/Auth/Auth';
-import Signup from './components/Auth/Signup/Signup';
-// import Navbar from './components/Navbar/Navbar';
-import Post from './components/Post/Post'
+import React, { useState, useEffect } from "react";
+import Auth from "./components/Auth/Auth";
+import SiteBar from "./components/Navbar/Navbar";
+import Post from "./components/Post/Post";
 
 
-
-function App() {
-  const [token, setToken] = useState('');
-
-
+function App  (props) {
+  const [token, settoken] = useState("");
+ 
   const updateLocalStorage = (newToken) => {
-    localStorage.setItem('token', newToken)
-    setToken(newToken)
-  }
+      localStorage.setItem("token", newToken);
+      settoken(newToken);
+  };
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      setToken(localStorage.getItem('token'))
-    }
+      if(localStorage.getItem("token")){
+          settoken(localStorage.getItem("token"))
+      }
   }, []);
-  
 
-  const clearLocalStorage = () => {
-    localStorage.clear()
-    setToken('')
+
+
+  const clearlocalstorage = () => {
+      localStorage.clear();
+      settoken("")
   }
-
-  // const updateToken = (newToken) => {
-  //   localStorage.setItem('token', newToken);
-  //   setToken(newToken);
-  //   console.log(updateToken);
-  // }
-
-  // const clearToken = () => {
-  //   localStorage.clear();
-  //   setToken('');
-  // }
-
 
 
   return (
-    <div>
-      <h2>Hello from App.jsx</h2>
-      {token ? (
+      <div className="App">
+      
+      <SiteBar clickLogout={clearlocalstorage}/>
+          {!token ? (
            <Auth updateLocalStorage={updateLocalStorage}/>  
           ):(
             <Post token={token}/> 
           )}
 
-      <Auth />
-    </div>
+      </div>
   );
-}
-
+};
 export default App;
