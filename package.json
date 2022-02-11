@@ -9,11 +9,7 @@
     "bootstrap": "^5.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-<<<<<<< HEAD
     "react-scripts": "^5.0.0",
-=======
-    "react-scripts": "5.0.0",
->>>>>>> 8298ed57e62614c8641186da29bd822d013c8167
     "reactstrap": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
