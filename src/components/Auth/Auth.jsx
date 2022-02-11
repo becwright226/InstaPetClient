@@ -1,6 +1,7 @@
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import React, { useState } from "react";
+import { Button, Container, Card, CardBody } from "reactstrap";
 const Auth = (props) => {
     const [isLoginVisible, setIsLoginVisible] = useState(true);
 
@@ -13,13 +14,36 @@ const Auth = (props) => {
         setIsLoginVisible(!isLoginVisible)
     }
     return ( 
+        <>
+        <Container
+        style={{
+            float: "left",
+            marginTop: "50px",
+            marginLeft: "50px",
+            border: "double black 4px",
+            padding: "20px",
+            backgroundColor:"orange",
+            height: "300px",
+            width: "45%"}}>
         <div>
-            <h1>Hello from Auth</h1>
-
+            
             {isLoginVisible===true? (<Login updateLocalStorage={props.updateLocalStorage}/>) : (<Signup updateLocalStorage={props.updateLocalStorage}/>)}
             <br/>
-            <button onClick={handleToggle}>Toggle Login/Signup </button>
+            <Button onClick={handleToggle}>New User ?</Button>
         </div>
+    
+        </Container>
+        
+        <Card
+        style={{backgroundColor: "black", margin:"50px"}}>
+            <CardBody>
+
+            Animal Image here?
+            </CardBody>
+
+        </Card>
+        </>
+        
      );
 }
  

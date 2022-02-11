@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button } from 'reactstrap';//1
+import { Card, Container } from 'react-bootstrap';
+import { Form, FormGroup, Label, Input, Button, CardBody } from 'reactstrap';//1
 
 const Login = (props) => {
     const [email, setemail] = useState("");
@@ -28,14 +29,15 @@ const Login = (props) => {
     return ( 
         <div>
             <h1>Login</h1>
+           
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor='Email'>Email</Label>
-                    <Input onChange={(e) => setemail(e.target.value)} name='email' value={email}/> 
+                    <Input style={{width: "80%"}} onChange={(e) => setemail(e.target.value)} name='email' value={email}/> 
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='password'>Password</Label>
-                    <Input onChange={(e) => setpassword(e.target.value)} name='password' value={password}/>
+                    <Input style={{width: "80%"}} onChange={(e) => setpassword(e.target.value)} name='password' value={password}/>
                 </FormGroup>
                 <Button type='submit'>Login</Button>
             </Form>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import {Form, FormGroup, Label, Input, Button} from "reactstrap";
 
 const Signup = (props) => {
@@ -33,6 +34,14 @@ const Signup = (props) => {
 
 
     return (
+
+        <Container style={{
+            padding: "20px",
+            border: "double black 3px",
+            backgroundColor: 'orange',
+            width: "45%"
+            
+        }}>
         <div>
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
@@ -47,8 +56,9 @@ const Signup = (props) => {
                 <FormGroup>
                     <Label htmlFor='petName'>Pet Name</Label>
                     <Input onChange={(e) => setPetName(e.target.value)} name="petName" value={petName}/>
-                </FormGroup> <FormGroup>
-                    <Label htmlFor='email'>Email</Label>
+                </FormGroup> 
+                <FormGroup>
+                    <Label htmlFor='email'>Email </Label>
                     <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
                 </FormGroup>
                 <FormGroup>
@@ -58,6 +68,7 @@ const Signup = (props) => {
                 <Button type='submit'> Sign Up </Button>
             </Form>
         </div>
+        </Container>
       )
 }
  
