@@ -8,6 +8,7 @@ import {
   Input,
   Button
 } from 'reactstrap';
+import Uploading from '../Uploading';
 
 const PostCreate = (props) => {
 
@@ -48,12 +49,8 @@ const PostCreate = (props) => {
   return ( 
     <div style={{width: '180px', height: '225px', border: 'solid 3px orange'}}>
       <Card onSubmit={handleSubmit}>
-        <CardImg UploadImage={props.UploadImage}>
-        </CardImg>
-          <br />
-          <br />
-          <br />
-          <br />
+        
+        <CardImg />
 
         <CardBody width="150px">
           <Input width="150px" height='300px' type='text' name='desc' value={desc} onChange={(e) => setDesc(e.target.value)}></Input>

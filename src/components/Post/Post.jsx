@@ -15,7 +15,7 @@ const Post = (props) => {
                 "Content-Type":"application/json",
                 "Authorization": props.token
             }),
-        }) .then((res) => res.json())
+        }).then((res) => res.json())
             .then((data) => {
                 setPost(data)
                 console.log(data)
@@ -26,6 +26,7 @@ const Post = (props) => {
     
     return (  
         <div>
+            <Uploading />
            
             <PostCreate fetchPost={fetchPost} {...<Uploading />} />
             Hello from Post

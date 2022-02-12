@@ -14,25 +14,27 @@ const Uploading = (props) => {
     data.append('upload_preset', 'images');
     setLoading(true);
     const res = await fetch (
-      'https://api.cloudinary.com/v1_1/akel4/image/upload',
+      'https://api.cloudinary.com/v1_1/akel4/images/upload',
       {
         method: 'POST',
         body: data,
       }
     )
-    const File = await res.json();
+    const File = await res.json()
 
     console.log(File)
+    setImage(File.secure_url)
+    setLoading(false)
   }
 
 
   return ( 
     <div>
       <Container>
-        <h1>Hello from uploading</h1>
-        <h1>Upload your pet pic!</h1>
         <FormGroup>
           <Input type='file' name='file' placeholder='Upload pet pic here!' onChange={UploadImage} />
+          <br />
+          {loading ? (<h3>Loading...</h3>) : <img src={image} style={{width: '300px'}}/>}
         </FormGroup>
       </Container>
     </div>
