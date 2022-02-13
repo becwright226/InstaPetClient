@@ -25,10 +25,8 @@ const Post = (props) => {
 
     
     return (  
-        <div>
-            <Uploading />
-           
-            <PostCreate fetchPost={fetchPost} {...<Uploading />} />
+        <div>           
+            <PostCreate />
             Hello from Post
         </div>
     );

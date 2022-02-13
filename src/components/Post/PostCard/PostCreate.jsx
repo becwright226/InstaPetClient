@@ -15,7 +15,7 @@ const PostCreate = (props) => {
   const [image, setImage] = useState('');
   const [desc, setDesc] = useState('');
   const [petType, setPetType] = useState('');
-  const [isPublic, setIsPublic] = useState(Boolean);
+  const [isPublic, setIsPublic] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,22 +36,20 @@ const PostCreate = (props) => {
   })
   .then((res) => res.json())
   .then((data) => {
+    //lines 40-46 are resetting the fields after user hits send
     console.log(data)
     setImage('')
     setDesc('')
     setPetType('')
-    setIsPublic(Boolean)
+    setIsPublic(false)
     props.fetchPost();
     console.log("Things are working, don't panic")
 })
   }
 
   return ( 
-    <div style={{width: '180px', height: '225px', border: 'solid 3px orange'}}>
+    <div style={{width: '180px', height: '225px', border: 'solid 3px black'}}>
       <Card onSubmit={handleSubmit}>
-        
-        <CardImg />
-
         <CardBody width="150px">
           <Input width="150px" height='300px' type='text' name='desc' value={desc} onChange={(e) => setDesc(e.target.value)}></Input>
         </CardBody>

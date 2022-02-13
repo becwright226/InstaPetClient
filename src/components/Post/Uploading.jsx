@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { Container, FormGroup, Input } from 'reactstrap';
 
 
 const Uploading = (props) => {
-
+  
   const [image, setImage] = useState('');
   const [loading, setLoading] = useState(false);
+  
+  const formatImageUrl = url => {
+    //convert .heic file urls to .jpg file
+    return url.replace('.heic', '.jpg')
+  }
 
   const UploadImage = async (e) => {
     const files = e.target.files
     const data = new FormData();
     data.append('file', files[0]);
-    data.append('upload_preset', 'images');
+    data.append('upload_preset', 'instapet');
     setLoading(true);
     const res = await fetch (
-      'https://api.cloudinary.com/v1_1/akel4/images/upload',
+      'http://api.cloudinary.com/v1_1/akel4/image/upload',
       {
         method: 'POST',
         body: data,
@@ -23,7 +29,8 @@ const Uploading = (props) => {
     const File = await res.json()
 
     console.log(File)
-    setImage(File.secure_url)
+    const formattedImageUrl = formatImageUrl(File.secure_url)
+    setImage(formattedImageUrl)
     setLoading(false)
   }
 
