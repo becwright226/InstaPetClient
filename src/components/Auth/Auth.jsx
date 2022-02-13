@@ -1,47 +1,33 @@
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
 import React, { useState } from "react";
-import { Button, Container, Card, CardBody } from "reactstrap";
+import { Button} from "reactstrap";
+import AuthNavbar from "../Navbar/Navbar";
+
+
 const Auth = (props) => {
     const [isLoginVisible, setIsLoginVisible] = useState(true);
 
     function handleToggle(){
-        /*if(isLoginVisible===true) {
-            setIsLoginVisible(false);
-        } else {
-            setIsLoginVisible(true);
-        }*/
         setIsLoginVisible(!isLoginVisible)
     }
     return ( 
         <>
-        <Container
-        style={{
-            float: "left",
-            marginTop: "50px",
-            marginLeft: "50px",
-            border: "double black 4px",
-            padding: "20px",
-            backgroundColor:"orange",
-            height: "300px",
-            width: "45%"}}>
-        <div>
+      
+      <AuthNavbar clearlocalstorage={props.clearlocalstorage}/>
             
-            {isLoginVisible===true? (<Login updateLocalStorage={props.updateLocalStorage}/>) : (<Signup updateLocalStorage={props.updateLocalStorage}/>)}
-            <br/>
-            <Button onClick={handleToggle}>New User ?</Button>
-        </div>
-    
-        </Container>
+         {isLoginVisible===true? (<Login updateLocalStorage={props.updateLocalStorage}/>) : (<Signup updateLocalStorage={props.updateLocalStorage}/>)}
         
-        <Card
-        style={{backgroundColor: "black", margin:"50px"}}>
-            <CardBody>
+        
+        
+    
+       
 
-            Animal Image here?
-            </CardBody>
+        <br/>
+           
+        <Button
+        style={{marginTop: "450px", marginLeft: "-730px", float: 'left'}} onClick={handleToggle}>New User ?</Button> 
 
-        </Card>
         </>
         
      );

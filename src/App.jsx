@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Auth from "./components/Auth/Auth";
-import Sitebar from "./components/Navbar/Navbar";
+import Auth from "./components/Auth/Auth"
 import Post from "./components/Post/Post";
+
 
 
 function App  (props) {
@@ -29,11 +29,11 @@ function App  (props) {
   return (
       <div className="App">
       
-      <Sitebar clearlocalstorage={clearlocalstorage}/>
+     
           {!token ? (
            <Auth updateLocalStorage={updateLocalStorage}/>  
           ):(
-            <Post token={token}/> 
+            <Post token={token} clearlocalstorage={clearlocalstorage}></Post>
           )}
 
       </div>

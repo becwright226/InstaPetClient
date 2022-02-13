@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import {Form, FormGroup, Label, Input, Button} from "reactstrap";
+import instapetLogin from '../../../assets/instapetLogin.jpg'
 
 const Signup = (props) => {
     const [firstName, setFirstName] = useState("");
@@ -34,15 +35,20 @@ const Signup = (props) => {
 
 
     return (
-
+        <div>
+            <h1
+            style={{margin:"50px"}}> Signup to connect with other animal lovers...</h1>
         <Container style={{
+            marginTop: "-35px",
+            marginLeft: "50px",
+            float: "left",
             padding: "20px",
             border: "double black 3px",
             backgroundColor: 'orange',
             width: "45%"
             
         }}>
-        <div>
+       <div>
             <h1>Sign Up</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -69,6 +75,20 @@ const Signup = (props) => {
             </Form>
         </div>
         </Container>
+        <Container>
+        <div style={{
+            float: "right",  
+            marginTop: "10px",
+            marginRight: "-250px",
+            border: "double black 4px",
+            padding: "20px",
+            backgroundColor:"orange",
+            height: "480px",
+            width: "60%" }}>
+            <img src={instapetLogin} alt="cute animals" id='loginImage' width="100%" />
+        </div>
+        </Container>
+        </div>
       )
 }
  
