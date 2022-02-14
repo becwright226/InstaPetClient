@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { 
+    Card, 
+    CardBody, 
+    CardImg, 
+    Container,
+    Row,
+    Col
+} from 'reactstrap';
 import PostCreate from './PostCard/PostCreate';
+import PostEdit from './PostCard/PostEdit';
+import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
+
 
 const Post = (props) => {
 
@@ -9,7 +20,7 @@ const Post = (props) => {
     const [postToUpdate, setPostToUpdate] = useState({});
   
     const fetchPost = () => {
-        fetch("http://localhost:1150/post/create",{
+        fetch("http://localhost:1150/post/mypets",{
             method:"GET",
             headers: new Headers({
                 "Content-Type":"application/json",
@@ -22,13 +33,35 @@ const Post = (props) => {
             })
     } 
         
+    const editUpdatePost = (post) => {
+        setPostToUpdate(post)
+        console.log(post)
+    }
 
-    
+    const updateOn = () => {
+        setUpdateActive(true)
+    }
+
+    const updateOff = () => {
+        setUpdateActive(false)
+    }    
+
+    useEffect(() => {
+        fetchPost()
+    }, []);
+
     return (  
-        <div>           
-            <PostCreate />
-            Hello from Post
-        </div>
+        <Container>
+        <Row>
+          <Col md='3'>
+            <PostCreate fetchPost={fetchPost} token={props.token} />
+          </Col>
+          <Col md='9'>
+            <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />
+          </Col>
+           {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
+        </Row>
+      </Container>
     );
 }
  

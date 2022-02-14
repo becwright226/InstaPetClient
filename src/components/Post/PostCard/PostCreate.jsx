@@ -6,7 +6,8 @@ import {
   CardBody,
   CardText,
   Input,
-  Button
+  Button,
+  Label
 } from 'reactstrap';
 import Uploading from '../Uploading';
 
@@ -14,26 +15,27 @@ const PostCreate = (props) => {
 
   const [image, setImage] = useState('');
   const [desc, setDesc] = useState('');
-  const [petType, setPetType] = useState('');
+  const [petType, setPetType] = useState('FurBaby');
   const [isPublic, setIsPublic] = useState(false);
 
   function handleSubmit(e) {
+    console.log('button was clicked')
     e.preventDefault();
     const requestObject = {
       image: image,
       desc: desc,
       petType: petType,
-      isPublic: isPublic,
-    };
+      isPublic: isPublic== "true" ? true : false,
+    }
 
-    fetch ("http://localhost:1150/post/create",{
+    fetch ("http://localhost:1150/post/",{
       method:"POST",
       body: JSON.stringify(requestObject),
       headers: new Headers({
-          "Content-Type":"application/json",
-          "Authorization": props.token
+        "Content-Type":"application/json",
+        "Authorization": props.token
       }),
-  })
+    })
   .then((res) => res.json())
   .then((data) => {
     //lines 40-46 are resetting the fields after user hits send
@@ -47,15 +49,37 @@ const PostCreate = (props) => {
 })
   }
 
+  //style={{width: '180px', height: '225px', border: 'solid 3px black'}}
   return ( 
-    <div style={{width: '180px', height: '225px', border: 'solid 3px black'}}>
-      <Card onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} style={{border: 'solid 3px orange', height: '300px', width: '200px'}} >
+      <Card>
+        <Uploading setImage={setImage} image={image} width= '30%' height= '30%'/>
+        <CardImg src='' value={image} onChange={(e) => setImage(props.formattedImageUrl)} />
+
         <CardBody width="150px">
-          <Input width="150px" height='300px' type='text' name='desc' value={desc} onChange={(e) => setDesc(e.target.value)}></Input>
+          <Label htmlFor='description'>Description:</Label>
+          <Input width="150px" height='300px' type='text' name='desc' value={desc}        onChange={(e) => setDesc(e.target.value)}></Input>
+          <br />
+    
+          <Label htmlFor='petType'>Pet Type:</Label>
+          <Input type='select' name='petType' value={petType} onChange={(e) => setPetType(e.target.value)}>
+            <option value="FurBaby">FurBaby</option>
+            <option value="ScaleBaby">ScaleBab</option>
+            <option value="ExoticBaby">ExoticBaby</option>
+          </Input>
+          <br />
+
+          <Label htmlFor='isPublic'>Privacy Setting:</Label>
+          <Input type='select'name='isPublic' value={isPublic} onChange={(e) => setIsPublic(e.target.value)}>
+            <option value="false">Private</option>
+            <option value="true">Public</option>
+          </Input>
+          <br />
+
         </CardBody>
-        <Button type='submit'>Share Your Pet's Pic!</Button>
-        </Card>
-    </div>
+        <Button type='submit'>Post!</Button>
+      </Card>
+    </form>
    );
 }
  
