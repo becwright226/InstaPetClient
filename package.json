@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.1.3",
+    "cloudinary-core": "^2.12.3",
     "flat-carousel": "^0.0.1",
     "mdb-react-ui-kit": "^2.3.0",
     "react": "^17.0.2",
