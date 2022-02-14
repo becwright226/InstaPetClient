@@ -47,8 +47,9 @@ const Post = (props) => {
     }    
 
     useEffect(() => {
-        fetchPost()
+        fetchPost();
     }, []);
+  
 
     return (  
         <Container>

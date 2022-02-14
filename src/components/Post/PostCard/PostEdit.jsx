@@ -18,18 +18,14 @@ const PostEdit = (props) => {
   const postUpdate = (e, post) => {
     console.log('button was clicked')
     e.preventDefault();
-    const { desc, petType, isPublic } = props.requestObject
-    const { image } = props.formattedImageUrl
+ 
 
     fetch (`http://localhost:1150/post/${props.postToUpdate.id}`, {
         method: 'PUT',
         body: JSON.stringify({
-          post: {
-              image: image,
-              desc: desc,
-              petType: petType,
-              isPublic: isPublic,
-          }
+              desc: editDesc,
+              petType: editPetType,
+          
         }),
         headers: new Headers({
           'Content-Type': 'application/json',

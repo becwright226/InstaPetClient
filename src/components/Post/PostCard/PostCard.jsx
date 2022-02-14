@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button, Card, CardImg, CardBody, CardText, Table, Container
+  Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns
 } from 'reactstrap';
 
 const PostCard = (props) => {
@@ -25,9 +25,9 @@ const PostCard = (props) => {
 
   const postMapper = () => {
     return props.post.map((post, index) => {
-      console.log(post.desc, 'POST DESCRIPTION HERE')
+      console.log(post.image, 'POST IMAGE HERE')
       return (
-        <Card key={index} style={{backgroundColor: 'orange'}}>
+        <Card key={index} style={{backgroundColor: 'orange', margin: '50px', padding: '12px'}}>
           <CardImg alt=''
           src={post.image}
           width= '50%'
@@ -41,17 +41,16 @@ const PostCard = (props) => {
           <Button color='danger' onClick={() => {deletePost(post)}}>Delete</Button>
           </CardBody>
         </Card>
+    
       )
     })
   }
   return ( 
     <>
     <h3>Your Posts</h3>
-    <div width= '200px' height= '300px' border= 'solid 3px orange'>
-      <Card>
+    <CardColumns>
       {postMapper()}
-      </Card>
-    </div>
+    </CardColumns>
     </>
    );
 }

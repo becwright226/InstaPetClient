@@ -49,10 +49,11 @@ const PostCreate = (props) => {
 })
   }
 
+
   //style={{width: '180px', height: '225px', border: 'solid 3px black'}}
   return ( 
-    <form onSubmit={handleSubmit} style={{border: 'solid 3px orange', height: '300px', width: '200px'}} >
-      <Card>
+    <form onSubmit={handleSubmit} style={{border: 'solid 3px orange', height: '500px', width: '400px'}} >
+      <Card style={{margin: '50px', float: 'left'}}>
         <Uploading setImage={setImage} image={image} width= '30%' height= '30%'/>
         <CardImg src='' value={image} onChange={(e) => setImage(props.formattedImageUrl)} />
 
