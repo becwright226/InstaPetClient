@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
     Card, 
@@ -11,6 +12,8 @@ import PostCreate from './PostCard/PostCreate';
 import PostEdit from './PostCard/PostEdit';
 import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
+import PostNav from './PostNavbar/PostNavbar';
+
 
 
 const Post = (props) => {
@@ -52,7 +55,9 @@ const Post = (props) => {
   
 
     return (  
+
         <Container>
+          <PostNav clearlocalstorage={props.clearlocalstorage}/>
         <Row>
           <Col md='3'>
             <PostCreate fetchPost={fetchPost} token={props.token} />
@@ -67,3 +72,4 @@ const Post = (props) => {
 }
  
 export default Post;
+

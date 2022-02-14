@@ -1,13 +1,12 @@
-/*import React, { useState } from 'react';
-import logout from "../../../assets/logout.webp"
+import React, { useState } from 'react';
+import { Button } from 'reactstrap';
 const Logout = (props) => {
     return(
     <div>
-        <img src={logout} id='logout' className='logout'
-        onClick={props.clearlocalstorage}/>
+        <Button style={{backgroundColor:'tomato', color:'black', outline: 'solid black 2px', fontFamily: 'Poppins'}} onClick={props.clearlocalstorage}>Logout</Button>
     </div>
 
     )
     }   
  
-export default Logout;*/
+export default Logout

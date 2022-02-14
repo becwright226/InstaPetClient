@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Auth from "./components/Auth/Auth";
-import SiteBar from "./components/Navbar/Navbar";
+import Auth from "./components/Auth/Auth"
+import FooterBar from "./components/Footer/Footer";
+
+
 import Post from "./components/Post/Post";
+
 
 
 function App  (props) {
@@ -27,15 +30,15 @@ function App  (props) {
 
 
   return (
-      <div className="App">
+      <div className="App" style={{backgroundColor: 'palegoldenrod', backgroundSize:'100%'}}>
       
-      <SiteBar clickLogout={clearlocalstorage}/>
+     
           {!token ? (
            <Auth updateLocalStorage={updateLocalStorage}/>  
           ):(
-            <Post token={token}/> 
+            <Post token={token} clearlocalstorage={clearlocalstorage}></Post>
           )}
-
+       <FooterBar/>
       </div>
   );
 };
