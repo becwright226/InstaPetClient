@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 const Logout = (props) => {
     return(
     <div>
-        <Button onClick={props.clearlocalstorage}>Logout</Button>
+        <Button style={{backgroundColor:'tomato', color:'black', outline: 'solid black 2px', fontFamily: 'Poppins'}} onClick={props.clearlocalstorage}>Logout</Button>
     </div>
 
     )

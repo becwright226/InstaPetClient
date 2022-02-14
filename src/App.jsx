@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Auth from "./components/Auth/Auth"
+import FooterBar from "./components/Footer/Footer";
+
+
 import Post from "./components/Post/Post";
 
 
@@ -27,7 +30,7 @@ function App  (props) {
 
 
   return (
-      <div className="App">
+      <div className="App" style={{backgroundColor: 'palegoldenrod', backgroundSize:'100%'}}>
       
      
           {!token ? (
@@ -35,7 +38,7 @@ function App  (props) {
           ):(
             <Post token={token} clearlocalstorage={clearlocalstorage}></Post>
           )}
-
+       <FooterBar/>
       </div>
   );
 };
