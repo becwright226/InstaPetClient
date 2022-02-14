@@ -55,9 +55,10 @@ const Post = (props) => {
   
 
     return (  
-
+        <>
+    <PostNav clearlocalstorage={props.clearlocalstorage}/>
         <Container>
-          <PostNav clearlocalstorage={props.clearlocalstorage}/>
+        
         <Row>
           <Col md='3'>
             <PostCreate fetchPost={fetchPost} token={props.token} />
@@ -68,6 +69,7 @@ const Post = (props) => {
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
       </Container>
+      </>
     );
 }
  

@@ -65,8 +65,8 @@ const PostNav = (props) => {
     const toggleNavbar = () => setCollapsed(!collapsed);
     
     
-    return (  <div>
-        <Navbar light style={{backgroundColor:'orange'}}>
+    return (  
+        <Navbar light style={{backgroundColor:'orange', width:'100%'} }>
           <NavbarBrand style={{fontFamily:'Moo Lah Lah', fontSize: "38px"}} href="/" className="mr-auto">
             Instapet
           </NavbarBrand>
@@ -91,7 +91,7 @@ const PostNav = (props) => {
             </Nav>
           </Collapse>
         </Navbar>
-      </div> );
+     );
 }
  
 export default PostNav;
