@@ -27,7 +27,6 @@ const PostCard = (props) => {
 
   const postMapper = () => {
     return props.post.map((post, index) => {
-      console.log(post.image, 'POST IMAGE HERE')
       return (
         <Card key={index} style={{backgroundColor: 'orange', margin: '50px', padding: '12px'}}>
           <CardImg alt=''
