@@ -99,6 +99,7 @@ const PostNav = (props) => {
               <NavItem>
                 <Logout clearlocalstorage={props.clearlocalstorage}/>
               </NavItem>
+              
             </Nav>
           </Collapse>
         </Navbar>

@@ -15,7 +15,10 @@ import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
 import PublicPost from './PublicPost/PublicPost';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import TreatCounter from './PublicPost/TreatCounter';
+import PublicFurBaby from './PublicPost/PublicFurBaby';
+import PublicScaleBaby from './PublicPost/PublicScaleBaby';
+import PublicExoticBaby from './PublicPost/PublicExoticBaby';
 
 
 
@@ -67,11 +70,22 @@ const Post = (props) => {
             <PostCreate fetchPost={fetchPost} token={props.token} />
           </Col>
           <Col md='9'>
-            <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />
+            {/* <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} /> */}
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
-       {/*<PublicPost token={props.token} updateOff={updateOff} url="http://localhost:1150/post/public"/>*/}
+
+
+
+        {/* <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} /> */}
+
+        {/* <PublicFurBaby /> */}
+
+        {/* <PublicScaleBaby /> */}
+
+        <PublicExoticBaby />
+
+        {/* <TreatCounter /> */}
       </Container>
       </>
     );
