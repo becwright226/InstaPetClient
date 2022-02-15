@@ -13,6 +13,7 @@ import PostEdit from './PostCard/PostEdit';
 import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 
 
@@ -56,7 +57,7 @@ const Post = (props) => {
 
     return (  
         <>
-    <PostNav clearlocalstorage={props.clearlocalstorage}/>
+    <Router><PostNav clearlocalstorage={props.clearlocalstorage}/> </Router> 
         <Container>
         
         <Row>
