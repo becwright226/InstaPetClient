@@ -13,7 +13,6 @@ const Uploading = (props) => {
   }
 
   const UploadImage = async (e) => {
-    debugger
     console.log("button clicked")
     const files = e.target.files
     const data = new FormData();

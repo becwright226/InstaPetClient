@@ -71,7 +71,7 @@ const Post = (props) => {
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
-        <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public"/>
+       {/*<PublicPost token={props.token} updateOff={updateOff} url="http://localhost:1150/post/public"/>*/}
       </Container>
       </>
     );

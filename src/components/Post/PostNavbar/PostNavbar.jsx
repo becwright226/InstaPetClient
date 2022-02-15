@@ -60,6 +60,11 @@ import Logout from "../../Navbar/Logout/Logout";
 import { FaFish, FaFeather, FaPaw } from "react-icons/fa";
 import Auth from "../../Auth/Auth";
 import Login from "../../Auth/Login/Login";
+import PublicPost from "../PublicPost/PublicPost";
+import Post from "../Post";
+import PublicFurBaby from "../PublicPost/PublicFurBaby";
+import PublicExoticBaby from "../PublicPost/PublicExoticBaby";
+import PublicScaleBaby from "../PublicPost/PublicScaleBaby";
 
 
 const PostNav = (props) => {
@@ -86,10 +91,10 @@ const PostNav = (props) => {
                 <NavLink style={{fontFamily:'Poppins'}}> <FaPaw size="15px" style={{color:'white'}}/><Link to='/FurBaby'>Fur Babies</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/scalebaby"> <FaFish size="18px" style={{color:'darkturquoise'}}/> Scale Babies </NavLink>
+                <NavLink style={{fontFamily:'Poppins'}} href="/scalebaby"> <FaFish size="18px" style={{color:'darkturquoise'}}/> <Link to='/ScaleBaby'> Scale Babies </Link> </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/exoticbaby">  <FaFeather  size="18px" style={{color:'green'}}/>  Exotic Babies</NavLink>
+                <NavLink style={{fontFamily:'Poppins'}} href="/exoticbaby">  <FaFeather  size="18px" style={{color:'green'}}/> <Link to='/ExoticBaby'> Exotic Babies </Link> </NavLink>
               </NavItem>
               <NavItem>
                 <Logout clearlocalstorage={props.clearlocalstorage}/>
@@ -98,8 +103,10 @@ const PostNav = (props) => {
           </Collapse>
         </Navbar>
         <Routes>
-            <Route exact path='/public' element={<Login/>}> </Route>
-            { /*<Route exact path='/FurBaby' element={<PublicFurBaby/>}> </Route>*/}
+            <Route exact path='/public' element={<PublicPost/>}> </Route>
+            <Route exact path='/FurBaby' element={<PublicFurBaby/>}> </Route>
+            <Route exact path='/ExoticBaby' element={<PublicExoticBaby/>}> </Route>
+            <Route exact path='/ScaleBaby' element={<PublicScaleBaby/>}> </Route>
         </Routes>
         </header>
      );
