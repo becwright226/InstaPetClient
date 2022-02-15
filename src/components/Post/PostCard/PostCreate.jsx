@@ -11,6 +11,8 @@ import {
   Option
   
 } from 'reactstrap';
+import { FaPaw } from 'react-icons/fa';
+
 
 import Uploading from '../Uploading';
 import {FaFish, FaPaw, FaFeather} from 'react-icons/fa'

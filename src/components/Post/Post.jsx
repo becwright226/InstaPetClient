@@ -13,7 +13,9 @@ import PostEdit from './PostCard/PostEdit';
 import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
+import PublicPost from './PublicPost/PublicPost';
 import { BrowserRouter as Router } from 'react-router-dom';
+
 
 
 
@@ -69,6 +71,7 @@ const Post = (props) => {
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
+        <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public"/>
       </Container>
       </>
     );

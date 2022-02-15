@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCamera } from 'react-icons/fa';
+import { FaBone, FaCamera } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns
 } from 'reactstrap';
@@ -24,9 +24,9 @@ const PostCard = (props) => {
     props.updateOn()
   }
 
+
   const postMapper = () => {
     return props.post.map((post, index) => {
-      console.log(post.image, 'POST IMAGE HERE')
       return (
         <Card key={index} style={{backgroundColor: 'orange', margin: '50px', padding: '12px', border: 'solid black 4px'}}>
           <CardImg alt=''
