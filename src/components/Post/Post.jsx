@@ -70,7 +70,7 @@ const Post = (props) => {
             <PostCreate fetchPost={fetchPost} token={props.token} />
           </Col>
           <Col md='9'>
-            {/* <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} /> */}
+             <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} /> 
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
@@ -82,8 +82,6 @@ const Post = (props) => {
         {/* <PublicFurBaby /> */}
 
         {/* <PublicScaleBaby /> */}
-
-        <PublicExoticBaby />
 
         {/* <TreatCounter /> */}
       </Container>

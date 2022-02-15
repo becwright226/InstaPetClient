@@ -1,6 +1,16 @@
 
 import React, { useState, useEffect } from 'react';
-import { FaBone } from 'react-icons/fa';
+
+const PublicExoticBaby = (props) => {
+  return ( 
+    <div>
+      <h1>Exotic Baby</h1>
+    </div>
+   );
+}
+ 
+export default PublicExoticBaby;
+/*import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
@@ -64,4 +74,4 @@ const PublicExoticBaby = (props) => {
    );
 }
  
-export default PublicExoticBaby;
+export default PublicExoticBaby;*/

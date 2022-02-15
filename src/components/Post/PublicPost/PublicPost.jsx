@@ -1,5 +1,14 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+const  PublicPost= (props) => {
+  return (
+    <div>
+      <h1> Public </h1>
+    </div>
+    );
+}
+ 
+export default PublicPost ;
+/*import React, { useState, useEffect } from 'react';
 import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
@@ -59,4 +68,4 @@ const PublicPost = (props) => {
 
 
 
-export default PublicPost; 
+export default PublicPost; */
