@@ -13,6 +13,7 @@ import PostEdit from './PostCard/PostEdit';
 import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
+import PublicPost from './PublicPost/PublicPost';
 
 
 
@@ -67,6 +68,7 @@ const Post = (props) => {
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
+        <PublicPost post={post} fetchPublic={props.fetchPublic} token={props.token}/>
       </Container>
     );
 }

@@ -65,7 +65,7 @@ const PostCreate = (props) => {
           <Label htmlFor='petType'>Pet Type:</Label>
           <Input type='select' name='petType' value={petType} onChange={(e) => setPetType(e.target.value)}>
             <option value="FurBaby">FurBaby</option>
-            <option value="ScaleBaby">ScaleBab</option>
+            <option value="ScaleBaby">ScaleBaby</option>
             <option value="ExoticBaby">ExoticBaby</option>
           </Input>
           <br />
