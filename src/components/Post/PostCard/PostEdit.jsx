@@ -57,9 +57,9 @@ const PostEdit = (props) => {
             <Label htmlFor='petType' />
             <Input type='text' name='petType' value={editPetType} onChange={(e) => setEditPetType(e.target.value)}></Input>
             <select name="options">
-          <option value="FurBaby">FurBaby</option>
-          <option value="ScaleBaby">ScaleBab</option>
-          <option value="ExoticBaby">ExoticBaby</option>
+          <option value="FurBaby">Fur Baby</option>
+          <option value="ScaleBaby">Scale Baby</option>
+          <option value="ExoticBaby">Exotic Baby</option>
           </select>
           </FormGroup>
          <Button type='submit'>Update your post!</Button>

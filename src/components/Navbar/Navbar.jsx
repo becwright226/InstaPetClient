@@ -89,7 +89,7 @@ export default BootstrapNavbar*/
 /////////////////////////////
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaFeather, FaFish, FaFortAwesome, FaPaw } from 'react-icons/fa'
+import { FaFeather, FaFish, FaPaw } from 'react-icons/fa'
 import {
   
   Navbar,
@@ -106,8 +106,8 @@ const AuthNavbar = (props) => {
   
 
     return (  <div>
-        <Navbar light style={{backgroundColor:'orange'}}>
-          <NavbarBrand href="/" className="mr-auto" style={{fontFamily: 'Moo Lah Lah', fontSize: '35px', color: 'black',}}>
+        <Navbar light style={{backgroundColor:'orange', borderBottom: 'solid black 4px'}}>
+          <NavbarBrand href="/" className="mr-auto" style={{fontFamily: 'Moo Lah Lah', fontSize: '35px', color: 'black'}}>
             Instapet <FaPaw size="15px" style={{color:'white'}}/> <FaFish size="18px" style={{color:'darkturquoise'}}/> <FaFeather  size="18px" style={{color:'green'}}/>
           </NavbarBrand>
         </Navbar>

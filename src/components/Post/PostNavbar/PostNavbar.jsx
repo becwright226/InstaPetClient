@@ -55,29 +55,35 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
+import {Route, Link, Routes} from 'react-router-dom'
 import Logout from "../../Navbar/Logout/Logout";
 import { FaFish, FaFeather, FaPaw } from "react-icons/fa";
+import Auth from "../../Auth/Auth";
+import Login from "../../Auth/Login/Login";
 
 
 const PostNav = (props) => {
     
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
+
+    
     
     
     return (  
-        <Navbar light style={{backgroundColor:'orange', width:'100%'} }>
+        <header>
+        <Navbar light style={{backgroundColor:'orange', width:'100%', borderBottom: 'solid black 4px'} }>
           <NavbarBrand style={{fontFamily:'Moo Lah Lah', fontSize: "38px"}} href="/" className="mr-auto">
-            Instapet
+            Instapet<FaPaw size="15px" style={{color:'white'}}/>  <FaFish size="18px" style={{color:'darkturquoise'}}/> <FaFeather  size="18px" style={{color:'green'}}/>
           </NavbarBrand>
           <NavbarToggler onClick={toggleNavbar} className="mr-2" />
           <Collapse isOpen={!collapsed} navbar>
             <Nav navbar>
-              <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/public">All Instapets  <FaPaw size="15px" style={{color:'white'}}/>  <FaFish size="18px" style={{color:'darkturquoise'}}/> <FaFeather  size="18px" style={{color:'green'}}/> </NavLink>
+              <NavItem>             
+                <NavLink style={{fontFamily:'Poppins'}}><Link to='/public'>All Instapets</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/furbaby"> <FaPaw size="15px" style={{color:'white'}}/> Fur Babies</NavLink>
+                <NavLink style={{fontFamily:'Poppins'}}> <FaPaw size="15px" style={{color:'white'}}/><Link to='/FurBaby'>Fur Babies</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink style={{fontFamily:'Poppins'}} href="/scalebaby"> <FaFish size="18px" style={{color:'darkturquoise'}}/> Scale Babies </NavLink>
@@ -91,6 +97,11 @@ const PostNav = (props) => {
             </Nav>
           </Collapse>
         </Navbar>
+        <Routes>
+            <Route exact path='/public' element={<Login/>}> </Route>
+            { /*<Route exact path='/FurBaby' element={<PublicFurBaby/>}> </Route>*/}
+        </Routes>
+        </header>
      );
 }
  
