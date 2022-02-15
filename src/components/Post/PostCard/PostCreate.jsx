@@ -9,6 +9,8 @@ import {
   Button,
   Label
 } from 'reactstrap';
+import { FaPaw } from 'react-icons/fa';
+
 import Uploading from '../Uploading';
 
 const PostCreate = (props) => {
@@ -59,13 +61,13 @@ const PostCreate = (props) => {
 
         <CardBody width="150px">
           <Label htmlFor='description'>Description:</Label>
-          <Input width="150px" height='300px' type='text' name='desc' value={desc}        onChange={(e) => setDesc(e.target.value)}></Input>
+          <Input width="150px" height='300px' type='text' name='desc' value={desc} onChange={(e) => setDesc(e.target.value)}></Input>
           <br />
     
           <Label htmlFor='petType'>Pet Type:</Label>
           <Input type='select' name='petType' value={petType} onChange={(e) => setPetType(e.target.value)}>
             <option value="FurBaby">FurBaby</option>
-            <option value="ScaleBaby">ScaleBab</option>
+            <option value="ScaleBaby">ScaleBaby</option>
             <option value="ExoticBaby">ExoticBaby</option>
           </Input>
           <br />
