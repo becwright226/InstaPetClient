@@ -7,9 +7,13 @@ import {
   CardText,
   Input,
   Button,
-  Label
+  Label,
+  Option
+  
 } from 'reactstrap';
+
 import Uploading from '../Uploading';
+import {FaFish, FaPaw, FaFeather} from 'react-icons/fa'
 
 const PostCreate = (props) => {
 
@@ -19,6 +23,7 @@ const PostCreate = (props) => {
   const [isPublic, setIsPublic] = useState(false);
 
   function handleSubmit(e) {
+      debugger
     console.log('button was clicked')
     e.preventDefault();
     const requestObject = {
@@ -52,33 +57,33 @@ const PostCreate = (props) => {
 
   //style={{width: '180px', height: '225px', border: 'solid 3px black'}}
   return ( 
-    <form onSubmit={handleSubmit} style={{border: 'solid 3px orange', height: '500px', width: '400px'}} >
-      <Card style={{margin: '50px', float: 'left'}}>
+    <form onSubmit={handleSubmit}>
+      <Card style={{marginTop: '50px', marginLeft: '-100px', float: 'left', backgroundColor: 'darkturquoise', fontFamily: "Poppins", width: '100%', border: 'solid black 4px'}}>
         <Uploading setImage={setImage} image={image} width= '30%' height= '30%'/>
         <CardImg src='' value={image} onChange={(e) => setImage(props.formattedImageUrl)} />
 
         <CardBody width="150px">
-          <Label htmlFor='description'>Description:</Label>
-          <Input width="150px" height='300px' type='text' name='desc' value={desc}        onChange={(e) => setDesc(e.target.value)}></Input>
+          <Label htmlFor='description' style={{fontFamily: "Poppins"}}>Description:</Label>
+          <Input style={{fontFamily: "Poppins", border: 'solid green 3px'}} width="150px" height='300px' type='text' name='desc' value={desc} onChange={(e) => setDesc(e.target.value)}></Input>
           <br />
     
-          <Label htmlFor='petType'>Pet Type:</Label>
-          <Input type='select' name='petType' value={petType} onChange={(e) => setPetType(e.target.value)}>
-            <option value="FurBaby">FurBaby</option>
-            <option value="ScaleBaby">ScaleBab</option>
-            <option value="ExoticBaby">ExoticBaby</option>
+          <Label htmlFor='petType' style={{fontFamily: "Poppins"}}>Pet Type:</Label>
+          <Input style={{fontFamily: "Poppins", border: 'solid green 3px'}} type='select' name='petType' value={petType} onChange={(e) => setPetType(e.target.value)}>
+            <option value="FurBaby"style={{fontFamily: "Poppins", color: 'darkorange'}}>  Fur Baby </option>
+            <option value="ScaleBaby"style={{fontFamily: "Poppins", color: 'darkturquoise'}}>  Scale Baby </option>
+            <option value="ExoticBaby"style={{fontFamily: "Poppins", color: 'green'}}>  Exotic Baby </option>
           </Input>
           <br />
 
-          <Label htmlFor='isPublic'>Privacy Setting:</Label>
-          <Input type='select'name='isPublic' value={isPublic} onChange={(e) => setIsPublic(e.target.value)}>
-            <option value="false">Private</option>
-            <option value="true">Public</option>
+          <Label htmlFor='isPublic' style={{fontFamily: "Poppins"}}>Privacy Setting:</Label>
+          <Input style={{fontFamily: "Poppins", border: 'solid green 3px'}} type='select'name='isPublic' value={isPublic} onChange={(e) => setIsPublic(e.target.value)}>
+            <option value="false" style={{fontFamily: "Poppins"}}>Private</option>
+            <option value="true" style={{fontFamily: "Poppins"}}>Public</option>
           </Input>
           <br />
 
         </CardBody>
-        <Button type='submit'>Post!</Button>
+        <Button type='submit' style={{width:"70%", backgroundColor: "tomato", color: "black", fontFamily: "Poppins", margin: '40px', border: 'solid black 3px'}}>Post!</Button>
       </Card>
     </form>
    );

@@ -66,15 +66,15 @@ const PostNav = (props) => {
     
     
     return (  
-        <Navbar light style={{backgroundColor:'orange', width:'100%'} }>
+        <Navbar light style={{backgroundColor:'orange', width:'100%', borderBottom: 'solid black 4px'} }>
           <NavbarBrand style={{fontFamily:'Moo Lah Lah', fontSize: "38px"}} href="/" className="mr-auto">
-            Instapet
+            Instapet<FaPaw size="15px" style={{color:'white'}}/>  <FaFish size="18px" style={{color:'darkturquoise'}}/> <FaFeather  size="18px" style={{color:'green'}}/>
           </NavbarBrand>
           <NavbarToggler onClick={toggleNavbar} className="mr-2" />
           <Collapse isOpen={!collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/public">All Instapets  <FaPaw size="15px" style={{color:'white'}}/>  <FaFish size="18px" style={{color:'darkturquoise'}}/> <FaFeather  size="18px" style={{color:'green'}}/> </NavLink>
+                <NavLink style={{fontFamily:'Poppins'}} href="/public">All Instapets</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink style={{fontFamily:'Poppins'}} href="/furbaby"> <FaPaw size="15px" style={{color:'white'}}/> Fur Babies</NavLink>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaCamera } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns
 } from 'reactstrap';
@@ -47,8 +48,8 @@ const PostCard = (props) => {
   }
   return ( 
     <>
-    <h3>Your Posts</h3>
-    <CardColumns>
+    <h1 style={{fontFamily: 'Moo Lah Lah', marginTop: '50px'}}>Your Posts <FaCamera size='30px' style={{color: 'tomato'}}/> </h1>
+    <CardColumns style={{backgroundColor:'darkturquoise'}}>
       {postMapper()}
     </CardColumns>
     </>
