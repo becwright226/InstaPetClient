@@ -14,6 +14,7 @@ import {
 
 import Uploading from '../Uploading';
 import {FaFish, FaPaw, FaFeather} from 'react-icons/fa'
+import APIURL from '../../../environment';
 
 const PostCreate = (props) => {
 
@@ -32,7 +33,7 @@ const PostCreate = (props) => {
       isPublic: isPublic== "true" ? true : false,
     }
 
-    fetch ("http://localhost:1150/post/",{
+    fetch (`${APIURL}/post/`,{
       method:"POST",
       body: JSON.stringify(requestObject),
       headers: new Headers({

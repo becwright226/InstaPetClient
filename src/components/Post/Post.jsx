@@ -20,6 +20,7 @@ import TreatCounter from './PublicPost/TreatCounter';
 import PublicFurBaby from './PublicPost/PublicFurBaby';
 import PublicScaleBaby from './PublicPost/PublicScaleBaby';
 import PublicExoticBaby from './PublicPost/PublicExoticBaby';
+import APIURL from '../../environment';
 
 
 
@@ -30,7 +31,7 @@ const Post = (props) => {
     const [postToUpdate, setPostToUpdate] = useState({});
   
     const fetchPost = () => {
-        fetch("http://localhost:1150/post/mypets",{
+        fetch(`${APIURL}/post/mypets`,{
             method:"GET",
             headers: new Headers({
                 "Content-Type":"application/json",
@@ -84,13 +85,13 @@ console.log(Treat, 'TREAT CONSOLE LOG')
             <Routes>
             <Route exact path='/' element={ <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />}> </Route>
                 {/*isPostVisible===true? (<Post/>) : (<PublicPost/>)*/}
-            <Route exact path='/public' element={<PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public"/>}> </Route>
+            <Route exact path='/public' element={<PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url={`${APIURL}/post/public`}/>}> </Route>
             
-            <Route exact path='/FurBaby' element={<PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>}> </Route>
+            <Route exact path='/FurBaby' element={<PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url={`${APIURL}/post/FurBaby`}/>}> </Route>
 
-            <Route exact path='/ExoticBaby' element={<PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby"/>}> </Route>
+            <Route exact path='/ExoticBaby' element={<PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url={`${APIURL}/post/ExoticBaby`}/>}> </Route>
 
-            <Route exact path='/ScaleBaby' element={<PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby"/>}> </Route>
+            <Route exact path='/ScaleBaby' element={<PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url={`${APIURL}/post/ScaleBaby`}/>}> </Route>
         </Routes>
 
           </Col>

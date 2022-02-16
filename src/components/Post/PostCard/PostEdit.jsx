@@ -8,6 +8,7 @@ import {
   Modal, 
   ModalBody, 
   ModalHeader } from 'reactstrap';
+ import APIURL from '../../../environment';
 
 const PostEdit = (props) => {
 
@@ -20,7 +21,7 @@ const PostEdit = (props) => {
     e.preventDefault();
  
 
-    fetch (`http://localhost:1150/post/${props.postToUpdate.id}`, {
+    fetch (`${APIURL}/post/${props.postToUpdate.id}`, {
         method: 'PUT',
         body: JSON.stringify({
               desc: editDesc,

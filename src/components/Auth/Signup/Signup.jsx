@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import {Form, FormGroup, Label, Input, Button} from "reactstrap";
 import instapetLogin from '../../../assets/instapetLogin.jpg'
-
+import APIURL from '../../../environment';
 const Signup = (props) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -21,7 +21,7 @@ const Signup = (props) => {
             password: password,
         };
     
-        fetch("http://localhost:1150/user/register",{
+        fetch(`${APIURL}/user/register`,{
             method:"POST",
             body: JSON.stringify(requestObject),
             headers: new Headers({

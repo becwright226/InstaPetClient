@@ -3,11 +3,12 @@ import { FaBone, FaCamera } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns
 } from 'reactstrap';
+import APIURL from '../../../environment';
 
 const PostCard = (props) => {
 
   const deletePost = (post) => {
-    fetch(`http://localhost:1150/post/${post.id}`, {
+    fetch(`${APIURL}/post/${post.id}`, {
       method: 'DELETE',
       headers: new Headers({
         'Content-Type': 'application/json',
