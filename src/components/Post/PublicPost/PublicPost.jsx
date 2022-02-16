@@ -1,0 +1,71 @@
+
+import React, { useState, useEffect } from 'react';
+import { FaBone } from 'react-icons/fa';
+import {
+  Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
+} from 'reactstrap';
+import TreatCounter from './TreatCounter';
+
+
+
+
+const PublicPost = (props) => {
+  const [publicPost, setPublicPost] = useState([]);
+
+    const fetchPost = () => {
+      fetch(props.url,{
+          method:"GET",
+          headers: new Headers({
+              "Content-Type":"application/json",
+              "Authorization": props.token
+          }),
+      }).then((res) => res.json())
+          .then((data) => {
+              setPublicPost(data)
+              console.log(data)
+          })
+        } 
+
+
+          useEffect(() => {
+            fetchPost();
+          }, []);
+
+          
+          const publicMapper = () => {
+          return publicPost.map((post, publicPost) => {
+            return (
+              <Form>
+              <Card key={publicPost} style={{backgroundColor: 'orange', margin: '50px', padding: '12px'}}>
+                <CardImg alt=''
+                src={post.image}
+                width= '50%'
+                height= '50%'
+                />
+                <CardBody>
+                  <CardText>{post.desc}</CardText>
+                  <CardText>{post.petType}</CardText>
+                </CardBody>
+                <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
+              </Card>
+              </Form>
+
+            )
+          })
+        }
+
+
+  return ( 
+    <div>
+     <h1 style={{fontFamily: 'Moo Lah Lah'}}>All InstaPets</h1>
+     <CardColumns>
+       {publicMapper()}
+     </CardColumns>
+    </div>
+   );
+  }
+
+
+
+
+export default PublicPost; 
