@@ -59,10 +59,12 @@ const Post = (props) => {
         fetchPost();
     }, []);
   
-
+   
     return (  
         <>
     <Router><PostNav clearlocalstorage={props.clearlocalstorage}/> </Router> 
+   
+   
         <Container>
         
         <Row>

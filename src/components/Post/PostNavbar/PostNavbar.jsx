@@ -72,7 +72,11 @@ const PostNav = (props) => {
     const [collapsed, setCollapsed] = useState(true);
     const toggleNavbar = () => setCollapsed(!collapsed);
 
-    
+    const [isPostVisible, setIsPostVisible] = useState(true);
+
+    function handleClick(){
+        setIsPostVisible(!isPostVisible)
+    }
     
     
     return (  
@@ -85,7 +89,7 @@ const PostNav = (props) => {
           <Collapse isOpen={!collapsed} navbar>
             <Nav navbar>
               <NavItem>             
-                <NavLink style={{fontFamily:'Poppins'}}><Link to='/public'>All Instapets</Link></NavLink>
+                <NavLink style={{fontFamily:'Poppins'}}><Link to='/public' onClick={handleClick}>All Instapets</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink style={{fontFamily:'Poppins'}}> <FaPaw size="15px" style={{color:'white'}}/><Link to='/FurBaby'>Fur Babies</Link></NavLink>
@@ -104,6 +108,7 @@ const PostNav = (props) => {
           </Collapse>
         </Navbar>
         <Routes>
+                {/*isPostVisible===true? (<Post/>) : (<PublicPost/>)*/}
             <Route exact path='/public' element={<PublicPost/>}> </Route>
             <Route exact path='/FurBaby' element={<PublicFurBaby/>}> </Route>
             <Route exact path='/ExoticBaby' element={<PublicExoticBaby/>}> </Route>
