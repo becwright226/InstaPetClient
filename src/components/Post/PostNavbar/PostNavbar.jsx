@@ -95,10 +95,10 @@ const PostNav = (props) => {
                 <NavLink style={{fontFamily:'Poppins'}}> <FaPaw size="15px" style={{color:'white'}}/><Link to='/FurBaby'>Fur Babies</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/scalebaby"> <FaFish size="18px" style={{color:'darkturquoise'}}/> <Link to='/ScaleBaby'> Scale Babies </Link> </NavLink>
+                <NavLink style={{fontFamily:'Poppins'}}> <FaFish size="18px" style={{color:'darkturquoise'}}/> <Link to='/ScaleBaby'> Scale Babies </Link> </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{fontFamily:'Poppins'}} href="/exoticbaby">  <FaFeather  size="18px" style={{color:'green'}}/> <Link to='/ExoticBaby'> Exotic Babies </Link> </NavLink>
+                <NavLink style={{fontFamily:'Poppins'}}>  <FaFeather  size="18px" style={{color:'green'}}/> <Link to='/ExoticBaby'> Exotic Babies </Link> </NavLink>
               </NavItem>
               <NavItem>
                 <Logout clearlocalstorage={props.clearlocalstorage}/>
