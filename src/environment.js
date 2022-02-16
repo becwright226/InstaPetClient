@@ -9,7 +9,7 @@ switch (window.location.hostname) {
 
     case "instapet-rwak-client.herokuapp.com":
 
-    APIURL= 'https://instapet-rwak.herokuapp.com/'
+    APIURL= 'https://instapet-rwak.herokuapp.com'
 
 }
 
