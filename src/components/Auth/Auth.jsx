@@ -19,7 +19,7 @@ const Auth = (props) => {
          {isLoginVisible===true? (<Login updateLocalStorage={props.updateLocalStorage}/>) : (<Signup updateLocalStorage={props.updateLocalStorage}/>)}
         
         
-         <Button style={{marginTop: "550px", marginLeft: "-650px", float: 'left', fontFamily: 'Poppins', backgroundColor: 'green', position: 'inherit', color: 'black'}} onClick={handleToggle}>Already user? Login</Button>
+         <Button style={{marginTop: "550px", marginLeft: "-650px", float: 'left', fontFamily: 'Poppins', backgroundColor: 'green', position: 'inherit', color: 'black'}} onClick={handleToggle}>Login/SignUp</Button>
     
        
 

@@ -4,6 +4,11 @@ import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
+import TreatCounter from './TreatCounter';
+
+
+
+
 const PublicPost = (props) => {
   const [publicPost, setPublicPost] = useState([]);
 
@@ -41,6 +46,7 @@ const PublicPost = (props) => {
                   <CardText>{post.desc}</CardText>
                   <CardText>{post.petType}</CardText>
                 </CardBody>
+                <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
               </Card>
               </Form>
 

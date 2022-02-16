@@ -98,20 +98,21 @@ console.log(Treat, 'TREAT CONSOLE LOG')
         </Row>
 
      
-        {/* <PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby" />
-
-        <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public" />
-
-        <PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>
-
-        <PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby" />
- */}
 
       </Container>
 
       </>
     );
-}
- 
-export default Post;
+  }
+  
+  export default Post;
+  
+  
+  {/* <PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby" />
 
+  <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public" />
+
+  <PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>
+
+  <PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby" />
+*/}

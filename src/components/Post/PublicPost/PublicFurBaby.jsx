@@ -6,6 +6,9 @@ import React, { useState, useEffect } from 'react';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
+import TreatCounter from './TreatCounter';
+
+
 
 const PublicFurBaby = (props) => {
 
@@ -45,6 +48,7 @@ const PublicFurBaby = (props) => {
                   <CardText>{post.desc}</CardText>
                   <CardText>{post.petType}</CardText>
                 </CardBody>
+                <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
               </Card>
               </Form>
 
