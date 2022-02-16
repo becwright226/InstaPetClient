@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react';
-const PublicFurBaby = (props) => {
-    return ( 
-        <div>
-            <h1>Fur Baby</h1>
-        </div>
-     );
-}
- 
-export default PublicFurBaby;
 
-/*import { FaBone } from 'react-icons/fa';
+
+import { FaBone } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
@@ -72,4 +65,4 @@ const PublicFurBaby = (props) => {
 
 
  
-export default PublicFurBaby;*/
+export default PublicFurBaby;

@@ -8,6 +8,7 @@ import {
     Row,
     Col
 } from 'reactstrap';
+import {Route, Link, Routes} from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom';
 import PostCreate from './PostCard/PostCreate';
 import PostEdit from './PostCard/PostEdit';
@@ -15,7 +16,6 @@ import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
 import PublicPost from './PublicPost/PublicPost';
-import { BrowserRouter as Router } from 'react-router-dom';
 import TreatCounter from './PublicPost/TreatCounter';
 import PublicFurBaby from './PublicPost/PublicFurBaby';
 import PublicScaleBaby from './PublicPost/PublicScaleBaby';
@@ -72,7 +72,7 @@ console.log(Treat, 'TREAT CONSOLE LOG')
     return (  
 
       <>
-      <Router><PostNav clearlocalstorage={props.clearlocalstorage}/> </Router> 
+      <PostNav clearlocalstorage={props.clearlocalstorage}/> 
      
         <Container>
         <Row>
@@ -80,22 +80,33 @@ console.log(Treat, 'TREAT CONSOLE LOG')
             <PostCreate fetchPost={fetchPost} token={props.token} />
           </Col>
           <Col md='9'>
-            <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />
+
+            <Routes>
+            <Route exact path='/' element={ <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />}> </Route>
+                {/*isPostVisible===true? (<Post/>) : (<PublicPost/>)*/}
+            <Route exact path='/public' element={<PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public"/>}> </Route>
+            
+            <Route exact path='/FurBaby' element={<PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>}> </Route>
+
+            <Route exact path='/ExoticBaby' element={<PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby"/>}> </Route>
+
+            <Route exact path='/ScaleBaby' element={<PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby"/>}> </Route>
+        </Routes>
+
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
 
-
-        <PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby" />
+     
+        {/* <PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby" />
 
         <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public" />
 
         <PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>
 
         <PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby" />
+ */}
 
-
-        <TreatCounter post={post} postToUpdate={postToUpdate} Treat={Treat} token={props.token} updateOff={updateOff} fetchPost={fetchPost}/>
       </Container>
 
       </>

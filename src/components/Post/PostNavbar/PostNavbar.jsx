@@ -61,13 +61,13 @@ const PostNav = (props) => {
             </Nav>
           </Collapse>
         </Navbar>
-        <Routes>
+        {/* <Routes> */}
                 {/*isPostVisible===true? (<Post/>) : (<PublicPost/>)*/}
-            <Route exact path='/public' element={<PublicPost/>}> </Route>
+            {/* <Route exact path='/public' element={<PublicPost/>}> </Route>
             <Route exact path='/FurBaby' element={<PublicFurBaby/>}> </Route>
             <Route exact path='/ExoticBaby' element={<PublicExoticBaby/>}> </Route>
             <Route exact path='/ScaleBaby' element={<PublicScaleBaby/>}> </Route>
-        </Routes>
+        </Routes> */}
         </header>
      );
 }

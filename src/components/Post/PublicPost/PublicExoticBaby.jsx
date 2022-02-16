@@ -1,16 +1,7 @@
 
+import { FaBone } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 
-const PublicExoticBaby = (props) => {
-  return ( 
-    <div>
-      <h1>Exotic Baby</h1>
-    </div>
-   );
-}
- 
-export default PublicExoticBaby;
-/*import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
@@ -56,7 +47,7 @@ const PublicExoticBaby = (props) => {
                 <CardText>{post.desc}</CardText>
                 <CardText>{post.petType}</CardText>
               </CardBody>
-              <TreatCounter />
+              <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
             </Card>
             </Form>
 
@@ -76,4 +67,4 @@ const PublicExoticBaby = (props) => {
    );
 }
  
-export default PublicExoticBaby;*/
+export default PublicExoticBaby;

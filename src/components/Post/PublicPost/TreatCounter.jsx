@@ -74,10 +74,10 @@ const TreatCounter = (props) => {
 //     props.Treat = 0;
 //   }
 // console.log(props.Treat, 'HEREEEEEEEE')
-  const [editTreat, setEditTreat] = useState(props.Treat);
+  const [editTreat, setEditTreat] = useState(props.treatCount);
 
   useEffect(() => {
-    console.log(props.Treat, 'PROPS.TREAT from TreatCounter')
+    console.log(props.treatCount, 'PROPS.TREAT from TreatCounter')
     console.log(props, 'THESE ARE THE PROPS!!!!!!!!')
   }, []);
   //* ^ this log shows me that Treat should be defined
@@ -89,14 +89,14 @@ const TreatCounter = (props) => {
    */
 
 
-  const fetchTreats = (e, treat) => {
+  const fetchTreats = (e, post) => {
     console.log('button was clicked')
     e.preventDefault();
 
     fetch(`http://localhost:1150/post/${props.postToUpdate.id}`,{
       method: 'PUT',
       body: JSON.stringify({
-        treat: editTreat + 1,
+        treat: + 1,
       }),
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -104,21 +104,20 @@ const TreatCounter = (props) => {
       }),
     }).then((res) => res.json())
     .then((data) => {
-        console.log(data)
-        setEditTreat(treat + 1)
-        console.log(setEditTreat, 'SET EDIT TREAT')
-        fetchTreats();
+      setEditTreat(data)
+        console.log(setEditTreat(data), 'THE DATAAAA')
         props.fetchPost();
-        props.updateOff();
+        
     })
   } 
 
     
   return ( 
-      <form onSubmit={fetchTreats}>
-        <p>You have {editTreat} treats on your photo!</p>
-        <Button type='submit' onChange={(e) => {setEditTreat(e.target.value)}}></Button>
-      </form>
+      <>
+      <p>You have {props.data} treats on your photo!</p>
+      <Button onClick={fetchTreats}>TREAT</Button>
+      </>
+     
    );
 }
  

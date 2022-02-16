@@ -1,17 +1,8 @@
+
+
+import { FaBone } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 
-const PublicScaleBaby = (props) => {
-    return ( 
-        <div>
-            <h1>Scale Baby</h1> 
-        </div>
-     );
-}
- 
-export default PublicScaleBaby;
-
-
-/*import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
@@ -74,4 +65,4 @@ const PublicScaleBaby = (props) => {
    );
 }
  
-export default PublicScaleBaby;*/
+export default PublicScaleBaby;

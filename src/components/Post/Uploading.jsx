@@ -6,7 +6,6 @@ import { Container, FormGroup, Input } from 'reactstrap';
 const Uploading = (props) => {
   const { image, setImage } = props 
   const [loading, setLoading] = useState(false);
-  console.log("Hellooooooooo")
   const formatImageUrl = url => {
     //convert .heic file urls to .jpg file
     return url.replace('.heic', '.jpg')
