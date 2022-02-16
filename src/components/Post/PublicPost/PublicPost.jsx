@@ -1,13 +1,19 @@
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+const  PublicPost= (props) => {
+  return (
+    <div>
+      <h1> Public </h1>
+    </div>
+    );
+}
+ 
+export default PublicPost ;
+/*import React, { useState, useEffect } from 'react';
 import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
-
-
 const PublicPost = (props) => {
-
   const [publicPost, setPublicPost] = useState([]);
 
     const fetchPost = () => {
@@ -28,8 +34,6 @@ const PublicPost = (props) => {
           useEffect(() => {
             fetchPost();
           }, []);
-
-
           const publicMapper = () => {
           return publicPost.map((post, publicPost) => {
             return (
@@ -54,7 +58,7 @@ const PublicPost = (props) => {
 
   return ( 
     <div>
-     <h2>All InstaPets</h2>
+     <h1 style={{fontFamily: 'Moo Lah Lah'}}>All InstaPets</h1>
      <CardColumns>
        {publicMapper()}
      </CardColumns>
@@ -65,4 +69,4 @@ const PublicPost = (props) => {
 
 
 
-export default PublicPost; 
+export default PublicPost; */

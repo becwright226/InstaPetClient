@@ -16,7 +16,7 @@ const FooterBar = (props) => {
   
     
     return (
-        <MDBFooter bgColor='green' className='text-center text-lg-left' style={{marginTop: "688px", fontFamily: 'Poppins', color: 'white'}}>
+        <MDBFooter bgColor='green' className='text-center text-lg-left' style={{marginTop: "688px", fontFamily: 'Poppins', color: 'white', borderTop: 'solid black 4px'}}>
       <div className='text-center p-3' style={{ backgroundColor: 'green' }}>
         &copy; {new Date().getFullYear()} Copyright:{' '}
         <a className='text-dark' href='https://mdbootstrap.com/'>

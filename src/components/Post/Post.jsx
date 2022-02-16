@@ -15,6 +15,7 @@ import PostCard from './PostCard/PostCard';
 import Uploading from './Uploading';
 import PostNav from './PostNavbar/PostNavbar';
 import PublicPost from './PublicPost/PublicPost';
+import { BrowserRouter as Router } from 'react-router-dom';
 import TreatCounter from './PublicPost/TreatCounter';
 import PublicFurBaby from './PublicPost/PublicFurBaby';
 import PublicScaleBaby from './PublicPost/PublicScaleBaby';
@@ -67,7 +68,7 @@ console.log(Treat, 'TREAT CONSOLE LOG')
         fetchPost();
     }, []);
   
-
+   
     return (  
 
       <>
