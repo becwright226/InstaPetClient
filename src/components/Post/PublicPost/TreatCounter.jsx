@@ -74,29 +74,32 @@ const TreatCounter = (props) => {
 //     props.Treat = 0;
 //   }
 // console.log(props.Treat, 'HEREEEEEEEE')
-  const [editTreat, setEditTreat] = useState(props.treatCount);
+let treats = props.treatCount
+  let [editTreat, setEditTreat] = useState(treats++);
+  
 
-  useEffect(() => {
-    console.log(props.treatCount, 'PROPS.TREAT from TreatCounter')
-    console.log(props, 'THESE ARE THE PROPS!!!!!!!!')
-  }, []);
   //* ^ this log shows me that Treat should be defined
   /* 
   ? when I added lines 73-76 it said cannot add property Treat, object is not extensible
-
+  
   ?MDN says that means an object that cannot have new properties added to it
   ! ^^^ Got that part figured out
-   */
-
-
-  const fetchTreats = (e, post) => {
-    console.log('button was clicked')
+  */
+//  console.log(editTreat)
+ 
+//  console.log(treats)
+ const fetchTreats = (e, post) => {
+  //  console.log(treats, "FIRST")
+  //  setEditTreat(editTreat++)
+  //  console.log(editTreat, "SECOND")
+    // console.log(editTreat, '1!!!!!!!!!!!!!!!')
+    // console.log('button was clicked')
     e.preventDefault();
-
-    fetch(`http://localhost:1150/post/${props.postToUpdate.id}`,{
+    console.log(props.postToUpdate.id)
+    fetch(`http://localhost:1150/post/treat/${props.postToUpdate.id}`,{
       method: 'PUT',
       body: JSON.stringify({
-        treat: + 1,
+        treat: treats,
       }),
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -104,17 +107,17 @@ const TreatCounter = (props) => {
       }),
     }).then((res) => res.json())
     .then((data) => {
-      setEditTreat(data)
-        console.log(setEditTreat(data), 'THE DATAAAA')
+      // setEditTreat(data)
+        // console.log(editTreat, 'THE DATAAAA')
         props.fetchPost();
-        
+        // console.log(editTreat)
     })
   } 
 
     
   return ( 
       <>
-      <p>You have {props.data} treats on your photo!</p>
+      <p>You have {treats} treats on your photo!</p>
       <Button onClick={fetchTreats}>TREAT</Button>
       </>
      
