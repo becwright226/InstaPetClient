@@ -8,6 +8,7 @@ import {
     Row,
     Col
 } from 'reactstrap';
+import { BrowserRouter as Router } from 'react-router-dom';
 import PostCreate from './PostCard/PostCreate';
 import PostEdit from './PostCard/PostEdit';
 import PostCard from './PostCard/PostCard';
@@ -69,14 +70,16 @@ console.log(Treat, 'TREAT CONSOLE LOG')
 
     return (  
 
+      <>
+      <Router><PostNav clearlocalstorage={props.clearlocalstorage}/> </Router> 
+     
         <Container>
-          <PostNav clearlocalstorage={props.clearlocalstorage}/>
         <Row>
           <Col md='3'>
             <PostCreate fetchPost={fetchPost} token={props.token} />
           </Col>
           <Col md='9'>
-            {/* <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} /> */}
+            <PostCard post={post} editUpdatePost={editUpdatePost} updateOn={updateOn} fetchPost={fetchPost} token={props.token} />
           </Col>
            {updateActive ? <PostEdit postToUpdate={postToUpdate} updateOff={updateOff} token={props.token} fetchPost={fetchPost} /> : <></>}
         </Row>
@@ -93,6 +96,8 @@ console.log(Treat, 'TREAT CONSOLE LOG')
 
         <TreatCounter post={post} postToUpdate={postToUpdate} Treat={Treat} token={props.token} updateOff={updateOff} fetchPost={fetchPost}/>
       </Container>
+
+      </>
     );
 }
  

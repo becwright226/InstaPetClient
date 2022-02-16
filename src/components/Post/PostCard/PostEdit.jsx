@@ -39,30 +39,30 @@ const PostEdit = (props) => {
   }
 
   return ( 
-    <Modal isOpen={true}>
-      <ModalHeader>Edit your post</ModalHeader>
-      <ModalBody>
-        <Form onSubmit={postUpdate}>
+    <Modal isOpen={true} style={{backgroundColor: 'black', border: 'solid black 3px'}}>
+      <ModalHeader style={{fontFamily: 'Moo Lah Lah',borderBottom: 'solid black 3px'}} >Edit your post</ModalHeader>
+      <ModalBody style={{backgroundColor: 'darkturquoise'}}>
+        <Form onSubmit={postUpdate} style={{backgroundColor: 'orange'}}>
           <FormGroup>
-            <Label htmlFor='image'>Edit Image:</Label>
-            <Input name='image' value={editImage} onChange={(e) => setEditImage(e.target.value)}></Input>
+            <Label htmlFor='image'style={{fontFamily: 'Poppins'}} >Edit Image:</Label>
+            <Input style={{border: 'solid green 3px', backgroundColor: 'palegoldenrod'}} name='image' value={editImage} onChange={(e) => setEditImage(e.target.value)}></Input>
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor='description'>Edit Description:</Label>
-            <Input name='desc' value={editDesc} onChange={(e) => setEditDesc(e.target.value)}></Input>
+            <Label htmlFor='description' style={{fontFamily: 'Poppins'}}>Edit Description:</Label>
+            <Input style={{border: 'solid green 3px', backgroundColor: 'palegoldenrod'}} name='desc' value={editDesc} onChange={(e) => setEditDesc(e.target.value)}></Input>
           </FormGroup>
 
           <FormGroup>
-            <Label htmlFor='petType' />
-            <Input type='text' name='petType' value={editPetType} onChange={(e) => setEditPetType(e.target.value)}></Input>
-            <select name="options">
-          <option value="FurBaby">FurBaby</option>
-          <option value="ScaleBaby">ScaleBab</option>
-          <option value="ExoticBaby">ExoticBaby</option>
+            <Label htmlFor='petType' style={{fontFamily: 'Poppins'}}>Pet Type</Label>
+            <Input style={{border: 'solid green 3px', backgroundColor: 'palegoldenrod'}} type='text' name='petType' value={editPetType} onChange={(e) => setEditPetType(e.target.value)}></Input>
+            <select name="options" style={{margin: '20px', borderRadius: '4px', border: 'solid green 2px'}}>
+          <option value="FurBaby" >Fur Baby</option>
+          <option value="ScaleBaby">Scale Baby</option>
+          <option value="ExoticBaby">Exotic Baby</option>
           </select>
           </FormGroup>
-         <Button type='submit'>Update your post!</Button>
+         <Button type='submit' style={{backgroundColor: 'tomato', margin: '30px', border: 'solid black 3px'}}>Update your post!</Button>
         </Form>
       </ModalBody>
     </Modal>
