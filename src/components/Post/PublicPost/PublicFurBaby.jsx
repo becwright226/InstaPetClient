@@ -8,8 +8,8 @@ const PublicFurBaby = (props) => {
 
   const [publicPost, setPublicPost] = useState([]);
 
-    const fetchFurBaby = () => {
-      fetch("http://localhost:1150/post/FurBaby",{
+    const fetchPost = () => {
+      fetch(props.url,{
           method:"GET",
           headers: new Headers({
               "Content-Type":"application/json",
@@ -24,7 +24,7 @@ const PublicFurBaby = (props) => {
 
 
           useEffect(() => {
-            fetchFurBaby();
+            fetchPost();
           }, []);
 
 

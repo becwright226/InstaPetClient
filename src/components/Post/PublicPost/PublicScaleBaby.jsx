@@ -11,7 +11,7 @@ const PublicScaleBaby = (props) => {
   const [publicPost, setPublicPost] = useState([]);
 
   const fetchScaleBaby = () => {
-    fetch("http://localhost:1150/post/ScaleBaby",{
+    fetch(props.url,{
         method:"GET",
         headers: new Headers({
             "Content-Type":"application/json",

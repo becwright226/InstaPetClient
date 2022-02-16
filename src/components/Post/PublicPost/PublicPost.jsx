@@ -10,8 +10,8 @@ const PublicPost = (props) => {
 
   const [publicPost, setPublicPost] = useState([]);
 
-    const fetchPublic = () => {
-      fetch("http://localhost:1150/post/public",{
+    const fetchPost = () => {
+      fetch(props.url,{
           method:"GET",
           headers: new Headers({
               "Content-Type":"application/json",
@@ -26,7 +26,7 @@ const PublicPost = (props) => {
 
 
           useEffect(() => {
-            fetchPublic();
+            fetchPost();
           }, []);
 
 

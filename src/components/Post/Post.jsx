@@ -41,6 +41,14 @@ const Post = (props) => {
             })
     } 
         
+
+    let Treat = props.treat
+  if (Treat === undefined) {
+    Treat = 0;
+  }
+console.log(Treat, 'TREAT CONSOLE LOG')
+
+
     const editUpdatePost = (post) => {
         setPostToUpdate(post)
         console.log(post)
@@ -74,16 +82,16 @@ const Post = (props) => {
         </Row>
 
 
+        <PublicExoticBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ExoticBaby" />
 
-        {/* <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} /> */}
+        <PublicPost  token={props.token} updateOff={updateOff} postToUpdate={postToUpdate} url="http://localhost:1150/post/public" />
 
-        {/* <PublicFurBaby /> */}
+        <PublicFurBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/FurBaby"/>
 
-        {/* <PublicScaleBaby /> */}
+        <PublicScaleBaby post={post} TreatCounter={TreatCounter} editUpdatePost={editUpdatePost} updateOn={updateOn} token={props.token} url="http://localhost:1150/post/ScaleBaby" />
 
-        <PublicExoticBaby />
 
-        {/* <TreatCounter /> */}
+        <TreatCounter post={post} postToUpdate={postToUpdate} Treat={Treat} token={props.token} updateOff={updateOff} fetchPost={fetchPost}/>
       </Container>
     );
 }

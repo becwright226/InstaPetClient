@@ -3,6 +3,7 @@ import { FaBone } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
+import TreatCounter from './TreatCounter';
 
 
 
@@ -10,8 +11,8 @@ const PublicExoticBaby = (props) => {
 
   const [publicPost, setPublicPost] = useState([]);
 
-  const fetchExoticBaby = () => {
-    fetch("http://localhost:1150/post/ExoticBaby",{
+  const fetchPost = () => {
+    fetch(props.url,{
         method:"GET",
         headers: new Headers({
             "Content-Type":"application/json",
@@ -26,7 +27,7 @@ const PublicExoticBaby = (props) => {
 
 
         useEffect(() => {
-          fetchExoticBaby();
+          fetchPost();
         }, []);
 
 
@@ -44,6 +45,7 @@ const PublicExoticBaby = (props) => {
                 <CardText>{post.desc}</CardText>
                 <CardText>{post.petType}</CardText>
               </CardBody>
+              <TreatCounter />
             </Card>
             </Form>
 
