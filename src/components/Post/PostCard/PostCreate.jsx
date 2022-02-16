@@ -11,8 +11,6 @@ import {
   Option
   
 } from 'reactstrap';
-import { FaPaw } from 'react-icons/fa';
-
 
 import Uploading from '../Uploading';
 import {FaFish, FaPaw, FaFeather} from 'react-icons/fa'
@@ -25,7 +23,6 @@ const PostCreate = (props) => {
   const [isPublic, setIsPublic] = useState(false);
 
   function handleSubmit(e) {
-      debugger
     console.log('button was clicked')
     e.preventDefault();
     const requestObject = {
