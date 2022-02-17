@@ -40,7 +40,7 @@ const PostCard = (props) => {
             <CardText>{post.isPublic}</CardText>
             <Button  style={{backgroundColor:'darkturquoise', fontFamily: 'Poppins', margin: '10px', color: 'black', border: 'solid black 2px'}} onClick={() => {startUpdate(post)}}>Update</Button>
           <Button  style={{backgroundColor:'tomato', fontFamily: 'Poppins', margin: '10px', color: 'black', border: 'solid black 2px'}}onClick={() => {deletePost(post)}}>Delete</Button>
-            <CardText style={{fontFamily: 'Moo Lah Lah', color: 'black', fontSize: '40px', fontWeight: 'lighter', float: 'right', backgroundColor: 'white', border: 'solid black 2px', borderRadius: '4px'}}>    {post.petType}    </CardText>
+            <CardText style={{fontFamily: 'Moo Lah Lah', color: 'black', fontSize: '40px', fontWeight: 'lighter', float: 'right', backgroundColor: 'white', border: 'solid white 2px', borderRadius: '4px'}}>    {post.petType}    </CardText>
           </CardBody>
         </Card>
     
