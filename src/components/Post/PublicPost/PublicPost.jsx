@@ -46,7 +46,7 @@ const PublicPost = (props) => {
                   <CardText style={{fontFamily:'Poppins', fontWeight:'bold', color:'white', fontSize:'18px', marginTop:'20px'}}>{post.desc}</CardText>
                   <br/>
                   <br/>
-                  <CardText  style={{float:'right', backgroundColor:'white',fontFamily:'Moo Lah Lah', fontSize:'35px',border:'solid black 3px', marginBottom:'-35px' }}>{post.petType}</CardText>
+                  <CardText  style={{float:'right', backgroundColor:'white',fontFamily:'Moo Lah Lah', fontSize:'35px',border:'solid white 3px', marginBottom:'-35px', borderRadius: '4px' }}>{post.petType}</CardText>
                 </CardBody>
                 <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
               </Card>
