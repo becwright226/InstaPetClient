@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { FaBone } from 'react-icons/fa';
+import { FaBone, FaCamera } from 'react-icons/fa';
 import {
   Button, Card, CardImg, CardBody, CardText, Table, Container, CardColumns, Form
 } from 'reactstrap';
@@ -36,15 +36,17 @@ const PublicPost = (props) => {
           return publicPost.map((post, publicPost) => {
             return (
               <Form>
-              <Card key={publicPost} style={{backgroundColor: 'orange', margin: '50px', padding: '12px'}}>
+              <Card key={publicPost} style={{backgroundColor: 'orange', margin: '50px', padding: '12px', border:'solid black 3px'}}>
                 <CardImg alt=''
                 src={post.image}
                 width= '50%'
                 height= '50%'
                 />
                 <CardBody>
-                  <CardText>{post.desc}</CardText>
-                  <CardText>{post.petType}</CardText>
+                  <CardText style={{fontFamily:'Poppins', fontWeight:'bold', color:'white', fontSize:'18px', marginTop:'20px'}}>{post.desc}</CardText>
+                  <br/>
+                  <br/>
+                  <CardText  style={{float:'right', backgroundColor:'white',fontFamily:'Moo Lah Lah', fontSize:'35px',border:'solid black 3px', marginBottom:'-35px' }}>{post.petType}</CardText>
                 </CardBody>
                 <TreatCounter token={props.token} fetchPost={fetchPost} postToUpdate={post} treatCount={post.treat}/>
               </Card>
@@ -57,7 +59,7 @@ const PublicPost = (props) => {
 
   return ( 
     <div>
-     <h1 style={{fontFamily: 'Moo Lah Lah'}}>All InstaPets</h1>
+     <h1 style={{fontFamily: 'Moo Lah Lah', fontSize: '45px', marginTop: '50px', marginLeft: '50px'}}>All InstaPets <FaCamera size='35px' style={{color: 'tomato'}}/> </h1>
      <CardColumns>
        {publicMapper()}
      </CardColumns>

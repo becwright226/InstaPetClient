@@ -63,6 +63,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { FaBone } from 'react-icons/fa';
 import { Button } from 'reactstrap';
 
 
@@ -117,8 +118,8 @@ let treats = props.treatCount
     
   return ( 
       <>
-      <p>You have {treats} treats on your photo!</p>
-      <Button onClick={fetchTreats}>TREAT</Button>
+      <p style={{marginTop:'-70px', marginLeft:'15px', fontFamily:'Poppins', fontSize:'20px'}}>{treats}   <FaBone style={{color:'white', fontSize: '30px'}}/> on your photo!</p>
+      <Button onClick={fetchTreats} style={{width:'25%', fontFamily:'Poppins',backgroundColor:'green', marginLeft: '15px', border:'solid green 3px'}}>treat <FaBone size='30px'/></Button>
       </>
      
    );
